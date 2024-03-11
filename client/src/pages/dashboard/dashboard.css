@@ -1,0 +1,68 @@
+
+.dashboard {
+    margin-left: 5px;
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+.search {
+    flex:0.1;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.searchBar {
+    background-color: #F0F3FF;
+    width: 50%;
+    height: 50px;
+    size: 60%;
+    border: solid 2px black;
+    border-radius: 20px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
+
+}
+
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    gap: 25%;
+}
+
+.display > div {
+    text-align: center;
+    padding: 20px;
+    border-radius: 50px;
+    background-color: antiquewhite;
+}
+
+.dropdown {
+    size: 40%;
+
+}
+.display {
+    flex:0.2;
+  
+}
+
+
+.table {
+    flex: 0.7;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+

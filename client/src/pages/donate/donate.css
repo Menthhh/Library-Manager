@@ -1,0 +1,20 @@
+.donate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.donate > h1{
+    text-align: center;
+    margin-top: 20px;
+    flex: 0.2;
+}
+
+.donatePic{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex: 0.6;
+    width: 100px;
+    height: 100px;
+}
