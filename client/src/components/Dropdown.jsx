@@ -5,27 +5,28 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function Dropdown() {
-  const [age, setAge] = React.useState('');
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
+export default function Dropdown({ categories, name, handleChange }) {
+  const [selectedCategory, setSelectedCategory] = React.useState(undefined); // Set initial state to undefined
+
+  const handleLocalChange = (event) => {
+    setSelectedCategory(event.target.value);
+    handleChange(event);
   };
 
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Categories</InputLabel>
+        <InputLabel id="demo-simple-select-label">{name}</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={age}
-          label="Age"
-          onChange={handleChange}
+          value={selectedCategory !== undefined ? selectedCategory : ''} // Conditionally set value prop
+          onChange={handleLocalChange}
         >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          {categories.map((category) => (
+            <MenuItem key={category.value} value={category.value}>{category.label}</MenuItem>
+          ))}
         </Select>
       </FormControl>
     </Box>

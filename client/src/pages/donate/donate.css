@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .donate > h1{
@@ -10,11 +11,13 @@
     flex: 0.2;
 }
 
+
+
 .donatePic{
     text-align: center;
     display: flex;
     justify-content: center;
     flex: 0.6;
-    width: 100px;
-    height: 100px;
+    width: 400px;
+    height: 400px;
 }

@@ -1,0 +1,17 @@
+
+.borrow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin: 20px;
+}
+
+.formInput {
+  display: flex;
+text-align: center;
+  flex-direction: column;
+  width: 50%;
+}
+

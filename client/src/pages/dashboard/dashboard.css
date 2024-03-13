@@ -44,9 +44,19 @@
 .display > div {
     text-align: center;
     padding: 20px;
-    border-radius: 50px;
-    background-color: antiquewhite;
+    border-radius: 20px;
 }
+
+.numOfmenBooks{
+    background-color: rgb(255, 142, 142);
+    border: solid 1px black;
+}
+
+.numOfwomenBooks{
+    background-color: rgb(186, 186, 255);
+    border: solid 1px black;
+}
+
 
 .dropdown {
     size: 40%;
