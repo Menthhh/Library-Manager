@@ -78,3 +78,19 @@ export const getCategories = async (req, res) => {
         res.status(500).send("Server Error");
     }
 };
+
+
+export const getBookById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const menbook = await pool.query('SELECT * FROM muslimeenbooks WHERE id = $1', [id]);
+        const womenbook = await pool.query('SELECT * FROM muslimahbooks WHERE id = $1', [id]);
+        if (menbook.rows.length === 0 && womenbook.rows.length === 0) {
+            return res.status(400).json({ message: 'Book not found' });
+        }
+        res.json(menbook.rows[0] || womenbook.rows[0]);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Server Error");
+    }
+}

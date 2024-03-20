@@ -3,7 +3,6 @@ import EnhancedTable from "../../components/EnhancedTable";
 import "./dashboard.css";
 import useFetch from "./../../hooks/useFetch";
 import { useState } from "react";
-import { SearchContext } from '../../context/SearchContext.jsx';
 
 export default function Dashboard() {
   const {

@@ -3,7 +3,8 @@ import {
     getAllBooks,
     getBook,
     getNumberOfBooks,
-    getCategories
+    getCategories,
+    getBookById
 
 } from '../controllers/dashboard.js';
 
@@ -13,5 +14,6 @@ router.get('/', getAllBooks);
 router.get('/search', getBook);
 router.get('/numberOfBooks', getNumberOfBooks)
 router.get('/categories', getCategories)
+router.get('/book/:id', getBookById)
 
 export default router;

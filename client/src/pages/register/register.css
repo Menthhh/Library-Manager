@@ -1,0 +1,183 @@
+.loginWraper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    
+}
+
+.loginWraper > img{
+    width: 50%;
+    height:93%;
+    border: rgb(255, 255, 255) 1px solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.wrapper{
+    width: 20%;
+    height: 80%;
+    align-items: center;
+    padding: 50px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.usernameOremail{
+    width: 300px;
+    height: 40px;
+    border: 1px solid #000000;
+    font-size: large;
+    padding: 5px;
+}
+
+.numberIn {
+    width: 300px;
+    height: 40px;
+    border: 1px solid #000000;
+    font-size: large;
+    padding: 5px;
+}
+
+.password{
+    width: 300px;
+    height: 40px;
+    border: 1px solid #000000;
+    font-size: large;
+    padding: 5px;
+}
+
+
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.googleLogo{
+    width: 32px;
+    height: 32px;
+
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: space-around;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.LogInbtnGoogle:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.submitBtn{
+    background-color: #ffffff;
+    color: #000000;
+    border: 3px solid #000000;
+    cursor: pointer;
+    padding: 10px 50px 10px 50px;
+    border-radius: 80px;
+    font-size: large;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.submitBtn:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+
+.alert {
+    position: relative;
+    top: 10;
+    width: 900px;
+    height: 50px;
+    padding: 10px;
+    margin: 10px;
+    line-height: 1.8;
+    border-radius: 5px;
+    cursor: hand;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: 400;
+  }
+  
+  .alertCheckbox {
+    display: none;
+  }
+  
+  :checked + .alert {
+    display: none;
+  }
+  
+  .alertText {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .alertClose {
+    float: right;
+    padding-top: 5px;
+    font-size: 10px;
+  }
+  
+  .clear {
+    clear: both;
+  }
+  
+  .info {
+    background-color: #89b478;
+    border: 1px solid #DDD;
+    color: #999;
+  }
+  
+  .success-dialog {
+    text-align: center;
+    background-color: rgb(149, 209, 149);
+    border: 1px solid rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    opacity: 0.7;
+    border-radius: 0px;
+    width: 73%;
+    font-weight: bold;
+   
+  }
+  
+  .notice {
+    background-color: #EFF;
+    border: 1px solid #DEE;
+    color: #9AA;
+  }
+  
+  .warning {
+    background-color: #FDF7DF;
+    border: 1px solid #FEEC6F;
+    color: #C9971C;
+  }
+  
+  .error {
+    background-color: #FEE;
+    border: 1px solid #EDD;
+    color: #A66;
+  }
+
+  .loginpage{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+
+  
