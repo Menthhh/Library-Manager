@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database Service
+  postgres:
+    image: postgres:13
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Menmen553
+      POSTGRES_DB: MSC_Library
+    ports:
+      - "5432:5432"  # Expose PostgreSQL on port 5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # Persist data between restarts
+    networks:
+      - app-network  # Use the same network for all services
+
+  # Backend Node.js Service
+  backend:
+    build:
+      context: ./backend
+    container_name: backend
+    environment:
+      POSTGRESQL_PASSWORD: Menmen553
+      DB_HOST: postgres  # Make sure this matches the Postgres service name
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: Menmen553
+      DB_NAME: MSC_Library
+      SESSION_SECRET: hwYnP/ZwhpDox3XglGf7oPibaMI090rB18ncnnObO5I=
+    ports:
+      - "5000:5000"  # Expose backend on port 5000
+    depends_on:
+      - postgres  # Ensure PostgreSQL starts before backend
+    volumes:
+      - ./backend:/app  # Mount the backend directory into the container
+    working_dir: /app
+    command: ["npm", "run", "dev"]  # Use your backend start command (e.g., npm run dev or node index.js)
+    networks:
+      - app-network  # Use the same network for all services
+
+  # Frontend React Service
+  frontend:
+    build:
+      context: ./frontend  # Path to your frontend Dockerfile and code
+      dockerfile: Dockerfile  # Specify Dockerfile if not default
+    container_name: frontend
+    depends_on:
+      - backend  # Ensure backend starts before frontend
+    ports:
+      - "80:80"  # Expose frontend on port 80
+    volumes:
+      - ./frontend:/app  # Mount the frontend directory into the container (if needed for development)
+    command: ["nginx", "-g", "daemon off;"]  # Nginx command to serve the static files
+    networks:
+      - app-network  # Use the same network for all services
+
+# Define a shared network for services to communicate
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  pgdata:  # Volume to persist PostgreSQL data
